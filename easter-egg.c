@@ -48,7 +48,15 @@ const char sintab_y[] = {129, 132, 134, 137, 139, 142, 144, 146, 149,
                          119, 121, 124, 126};
 char *const sprites = $2000;
 char *SCREEN = $0400;
-char *TEXT = "travellers - ep version 04:22    asteroid - ep version 05:53    the end - ep version 05:18    space operators - ep version 04:12    mot nya varldar - ep version 05:49    weltraum - anymachine remix 05:20    sterne - 808dotpop mix 08:41    sterne - the metroland constellation remix 05:01    weltraum - independent state remix 06:25    ";
+char *TEXT = "travellers - ep version 04:22    "
+             "asteroid - ep version 05:53    "
+             "the end - ep version 05:18    "
+             "space operators - ep version 04:12    "
+             "mot nya varldar - ep version 05:49    "
+             "weltraum - anymachine remix 05:20    "
+             "sterne - 808dotpop mix 08:41    "
+             "sterne - the metroland constellation remix 05:01    "
+             "weltraum - independent state remix 06:25    ";
 
 void main()
 {
