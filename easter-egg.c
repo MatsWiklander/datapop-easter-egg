@@ -11,6 +11,7 @@ char *TEXT = "travellers - ep version 04:22    "
              "sterne - 808dotpop mix 08:41    "
              "sterne - the metroland constellation remix 05:01    "
              "weltraum - independent state remix 06:25    ";
+char sprite_text[] = "datapop";
 
 const char SCROLL_PIXELS_PER_FRAME = 4;
 const char SPRITES_USED = 0b01111111;
@@ -181,13 +182,6 @@ void initialize()
     fill_screen(SCREEN, $20);
     fill_screen(COLORRAM, LIGHT_GREY);
     generate_sprites();
-    // Wait for raster
-    do
-    {
-    } while (VICII->RASTER != $fe);
-    do
-    {
-    } while (VICII->RASTER != $ff);
     place_sprites();
 }
 
@@ -237,17 +231,15 @@ void place_sprites()
     VICII->SPRITES_ENABLE = SPRITES_USED;
     VICII->SPRITES_EXPAND_X = SPRITES_USED;
     VICII->SPRITES_EXPAND_Y = SPRITES_USED;
-    char *sprites_ptr = SCREEN + $3f8;
-    char spr_id = (char)((unsigned int)SPRITES / $40);
+    char *sprites_pointer = SCREEN + $3f8;
+    char sprite_index = (char)((unsigned int)SPRITES / $40);
     char j2 = 0;
-    char col = $5;
     for (char j : 0..6)
     {
-        sprites_ptr[j] = spr_id++;
+        sprites_pointer[j] = sprite_index++;
         SPRITES_XPOS[j2] = 0;
         SPRITES_YPOS[j2] = 0;
         SPRITES_COLOR[j] = WHITE;
-        col = col ^ ($7 ^ $5);
         j2++;
         j2++;
     }
@@ -255,11 +247,10 @@ void place_sprites()
 
 void generate_sprites()
 {
-    char cml[] = "datapop";
     char *sprites = SPRITES;
     for (char i : 0..6)
     {
-        generate_character_generator_sprite(cml[i], sprites);
+        generate_character_generator_sprite(sprite_text[i], sprites);
         sprites = sprites + $40;
     }
 }
