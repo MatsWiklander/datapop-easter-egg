@@ -15,7 +15,7 @@ char *TEXT = "01 sonne 04:59    "
              "11 nebulosa 05:26    "
              "bonus tracks    "
              "12 weltraum (anymachine remix) 05:20    "
-             "13 travellers (machine brennt remake) 06:11    ";
+             "13 travellers (maschine brennt remake) 06:11    ";
 char sprite_text[] = "datapop";
 
 const char SCROLL_PIXELS_PER_FRAME = 4;
