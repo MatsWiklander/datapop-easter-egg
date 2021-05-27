@@ -2,15 +2,20 @@
 
 char *const SPRITES = $2000;
 char *SCREEN = $0400;
-char *TEXT = "travellers - ep version 04:22    "
-             "asteroid - ep version 05:53    "
-             "the end - ep version 05:18    "
-             "space operators - ep version 04:12    "
-             "mot nya varldar - ep version 05:49    "
-             "weltraum - anymachine remix 05:20    "
-             "sterne - 808dotpop mix 08:41    "
-             "sterne - the metroland constellation remix 05:01    "
-             "weltraum - independent state remix 06:25    ";
+char *TEXT = "01 sonne 04:59    "
+             "02 space invaders 03:35    "
+             "03 asteroid 05:54    "
+             "04 the end 05:19    "
+             "05 space operators 04:12    "
+             "06 sterne 05:56    "
+             "07 weltraum 07:13    "
+             "08 travellers 04:19    "
+             "09 mot nya varldar 05:53    "
+             "10 schwarzes loch 04:40    "
+             "11 nebulosa 05:26    "
+             "bonus tracks    "
+             "12 weltraum (anymachine remix) 05:20    "
+             "13 travellers (machine brennt remake) 06:11    ";
 char sprite_text[] = "datapop";
 
 const char SCROLL_PIXELS_PER_FRAME = 4;
@@ -176,11 +181,11 @@ void fill_screen(char *screen, char fill)
 
 void initialize()
 {
-    VICII->BG_COLOR = BLUE;
-    VICII->BORDER_COLOR = BLUE;
+    VICII->BG_COLOR = ORANGE;
+    VICII->BORDER_COLOR = ORANGE;
 
     fill_screen(SCREEN, $20);
-    fill_screen(COLORRAM, LIGHT_GREY);
+    fill_screen(COLORRAM, BLACK);
     generate_sprites();
     place_sprites();
 }
